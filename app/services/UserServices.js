@@ -1,5 +1,19 @@
 function UserSevices() {
 
+    this.setLocal = function() {
+        return  axios({
+            method: 'get',
+            url: 'https://61d6e9e735f71e0017c2e8c7.mockapi.io/User',
+        })
+        .then(function(result){
+            let DSND = result.data;
+            let taiKhoanND = DSND.map(function(users){
+                return users.taiKhoan;
+            })
+            localStorage.setItem("DSND",JSON.stringify(taiKhoanND))
+        })
+    } 
+
     this.layDS = function() {
         return  axios({
             method: 'get',

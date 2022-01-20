@@ -13,9 +13,9 @@ function Validation() {
     }
 
     this.checkID = function (value, spanID, message, mangUser) {
-        isExist = false; //người dùng chưa có trong mảng dữ liệu
-        isExist = mangUser.some(function(user){
-            return user.taiKhoan == value;
+        var isExist = false; //người dùng chưa có trong mảng dữ liệu
+        isExist = mangUser.some(function(taiKhoan){
+            return taiKhoan == value;
         })
         
         if(isExist) {
